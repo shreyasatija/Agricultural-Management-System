@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href = "index.css" rel = "stylesheet" type = "text/css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+
+    <i class="fa fa-home" style="font-size:36px;color:blue" onclick = 'location.href = "index.php" '></i><br>
+
+    <button type="menu" id='login'>Login</button>
+    <button type="menu" id = 'register'>Register</button>
+
+    <div class = "outer register">
+        <div>
+            <label for="type">User type:</label>
+            <input type="radio" name = "type" value=0 >
+            <label>Farmer</label>
+            <input type="radio" name = "type" value=1>
+            <label>Buyer</label>
+        </div>
+    
+        <div class = 'info farmerform'>
+            <form action="register.php" method="POST">
+                <input type="text" placeholder="Enter UID" name= "UID" required>
+                <input type="text" placeholder="Enter Your Name as on UID" name = "name" required>
+                <input type="text" placeholder="Enter login ID" name = "loginid" required>
+                <input type="text" placeholder="Enter Account No. :" name = "account" required>
+                <input type="text" placeholder="Enter IFSC Code: " name = 'ifsc' required>
+                <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$^&%*()_+-]).{4,}" 
+                title="Must contain at least one number, one uppercase, one lowercase letter, a special character, and at least 8 or more characters" placeholder="Enter Password" name = 'password'>
+                <input type="password" placeholder="Confirm Password" name = 'conf_password'>
+                <input type="submit" name = "farmerform" value="Submit" required>
+            </form>
+        </div>
+        
+        <div class="info buyerform">
+            <form action="register.php" method="POST">
+                <input type="text" placeholder="Enter UID" name='UID' required>
+                <input type="text" placeholder="Enter Your Name as on UID" name = 'name' required>
+                <input type="text" placeholder="Enter login ID" name = "loginid" required>
+                <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$^&%*()_+-]).{4,}" 
+                title="Must contain at least one number, one uppercase, one lowercase letter, a special character, and at least 8 or more characters" placeholder="Enter Password" name = 'password'required>
+                <input type="password" placeholder="Confirm Password" name = 'conf_password' required>
+                <input type="submit" name = "buyerform" value="Submit" required>
+            </form>
+        </div>
+    </div>
+
+    <div class = "outer login">
+        <form action="login.php" method="POST">
+            <input type="text" placeholder="Enter login ID" name = "loginid" required>
+            <input type="password" placeholder="Enter Password" name = 'password'required>
+            <input type="submit" name = "login" value="Submit" required>
+        </form>
+    </div>
+</body>
+</html>
